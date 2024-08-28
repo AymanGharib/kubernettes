@@ -1,4 +1,5 @@
 FROM centos
+
 MAINTAINER vikash@gmail.com
 RUN cd /etc/yum.repos.d/
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
