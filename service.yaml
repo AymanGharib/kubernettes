@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2024-08-29T02:19:26Z"
+  labels:
+    run: my-pod
+  name: my-pod
+  namespace: default
+  resourceVersion: "12982"
+  uid: 905fa7f1-03e2-414b-8ffa-94768c24f7ee
+spec:
+  clusterIP: 10.110.229.103
+  clusterIPs:
+  - 10.110.229.103
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31584
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: my-pod
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

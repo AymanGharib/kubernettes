@@ -1,0 +1,8 @@
+- hosts:all
+     become:true
+     tasks:
+         name: new pod 
+         command: kubectl apply-f deployement.yaml
+         name: new svc
+         command: kubectl apply -f deployement.yaml
+         
