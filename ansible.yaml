@@ -1,8 +1,8 @@
-- hosts:all
-     become:true
-     tasks:
-         name: new pod 
-         command: kubectl apply-f deployement.yaml
-         name: new svc
-         command: kubectl apply -f deployement.yaml
-         
+- hosts: localhost 192.168.49.2
+  become: true
+  tasks:
+    - name: Deploy new pod
+      command: kubectl apply -f deployement.yaml --validation=false
+
+    - name: Deploy new service
+      command: kubectl apply -f service.yaml
